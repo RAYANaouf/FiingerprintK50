@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # URL brute du JSON sur GitHub
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/DjamelGz/k50server/main/users.json"
+GITHUB_RAW_URL = "https://raw.githubusercontent.com/RAYANaouf/FiingerprintK50/main/users.json"
 
 def get_users():
     """
