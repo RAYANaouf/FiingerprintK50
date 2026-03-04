@@ -40,6 +40,9 @@ def receive_data():
 
     return "OK"
 
+
+
+
 @app.route('/iclock/getrequest', methods=['GET'])
 def get_request():
     sn = request.args.get("SN")
@@ -50,9 +53,12 @@ def get_request():
     command = "DATA QUERY USERINFO\n"
     return command
 
+
+
+
 @app.route('/')
 def home():
-    return "Serveur K50 actif"
+    return "Serveur K50 actif" + "the users we have ==>" + get_users()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
