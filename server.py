@@ -1,6 +1,9 @@
 from flask import Flask, request
 import requests
 
+
+import json
+
 app = Flask(__name__)
 
 # URL brute du JSON sur GitHub
@@ -55,10 +58,12 @@ def get_request():
 
 
 
-
 @app.route('/')
 def home():
-    return "Serveur K50 actif" + "the users we have ==>" + get_users()
+    users = get_users()
+    # json.dumps makes the dictionary look pretty and readable
+    return f"Serveur K50 actif. Les utilisateurs actuels : <br><pre>{json.dumps(users, indent=4)}</pre>"
 
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
